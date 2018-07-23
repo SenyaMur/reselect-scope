@@ -30,9 +30,9 @@ export function endScope(){
 
 function defaultEqualityCheck(a, b) {
     let isEqual = false;
-    if (Array.isArray(b) && Array.isArray(b)) {
+    if (Array.isArray(a) && Array.isArray(b)) {
       return areArgumentsShallowlyEqual(a, b);
-    } else if (Array.isArray(b) || Array.isArray(b)) {
+    } else if (Array.isArray(a) || Array.isArray(b)) {
       return false;
     } else if (a.scopeIndex != null && b.scopeIndex != null) {
       //If CreateSelect created in scope
@@ -42,7 +42,7 @@ function defaultEqualityCheck(a, b) {
       //If const CreateSelect
       isEqual = a === b;
       return isEqual;
-    } else if (a.prototype.constructor && b.prototype.constructor) {
+    } else if ((typeof a ==='function') && (typeof b ==='function')) {
       isEqual = '' + a.prototype.constructor == '' + b.prototype.constructor;
       return isEqual;
     } else {
@@ -51,7 +51,7 @@ function defaultEqualityCheck(a, b) {
     }
 }
 function areArgumentsShallowlyEqual(prev, next) {
-  if (prev === null || next === null || prev.length !== next.length) {
+  if (prev.length !== next.length) {
     return false;
   }
 
