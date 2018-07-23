@@ -1,6 +1,6 @@
 {
   "name": "reselect-scope",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "Reusing sharing Selectors for complex selectors",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -21,7 +21,7 @@
     "lint": "eslint src test",
     "prepublish": "npm run compile",
     "test": "better-npm-run test",
-    "test:cov": "better-npm-run test:cov"    
+    "test:cov": "better-npm-run test:cov"
   },
   "betterScripts": {
     "test": {
@@ -86,19 +86,19 @@
     "babel-plugin-transform-es2015-template-literals": "^6.6.5",
     "babel-register": "^6.7.2",
     "better-npm-run": "0.0.8",
-    "chai": "^3.0.0",
+    "chai": "^4.1.2",
     "codecov.io": "^0.1.6",
     "coveralls": "^2.11.4",
-    "eslint": "^2.11",
-    "eslint-plugin-react": "^5.1.1",
+    "eslint": "^5.2.0",
+    "eslint-plugin-react": "^7.0.0",
     "lodash.memoize": "^4.1.0",
     "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
     "ncp": "^2.0.0",
-    "nyc": "^6.4.0",
+    "nyc": "^12.0.2",
     "reselect": ">1.0.0",
     "typescript": "^2.1.4",
     "typings-tester": "^0.2.0",
-    "uglify-js": "^3.0.20"
+    "uglify-js": "^3.4.5"
   }
 }
