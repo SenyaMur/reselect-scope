@@ -1,8 +1,9 @@
-# reselect-scope
-[![Build status][ci-badge]][ci]
-[![Coveralls][coveralls-badge]][coveralls]
-[![Npm][npm-badge]][npm]
+[![Build Status](https://travis-ci.org/SenyaMur/reselect-scope.svg?branch=master)](https://travis-ci.org/SenyaMur/reselect-scope)
+[![Coverage Status](https://coveralls.io/repos/github/SenyaMur/reselect-scope/badge.svg)](https://coveralls.io/github/SenyaMur/reselect-scope)
+[![NPM](https://img.shields.io/npm/v/reselect-scope.svg)](https://www.npmjs.com/package/reselect-scope)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/SenyaMur/reselect-scope/blob/master/LICENSE)
+
+# reselect-scope
 
 `reselec-scope` use for reduce selectors instans in share components with complex logic where reuse selectors. Need for reduce dublicated selector objects in memory with wheir keepping values.
 
