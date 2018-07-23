@@ -5,7 +5,7 @@
 
 # reselect-scope
 
-`reselec-scope` use for reduce selectors instans in share components with complex logic where reuse selectors. Need for reduce dublicated selector objects in memory with wheir keepping values.
+`reselec-scope` use for reduce selectors instants in share components with complex logic where reuse selectors. The library helps to reduce duplicated objects  of selector in memory with their calculated values.
 
 ## Installation
 
@@ -15,9 +15,11 @@ npm install reselect-scope
 ```
 
 ## Usage
+
 `reselect` example for share component
 
 #### `selectors/orderListSelectors.js`
+
 ```js
 import { createSelector } from 'reselect'
 
@@ -36,7 +38,7 @@ export const makeGetVisibleOrderList = () => {
     (visibilityFilter, orderlist) => {
       switch (visibilityFilter) {
         case 'SHOW_AVAILABLE':
-          return orderlist.filter(item => item.isAvailable)        
+          return orderlist.filter(item => item.isAvailable)
         default:
           return orderlist
       }
@@ -68,8 +70,8 @@ import { connect } from 'react-redux'
 import { orderItemAdd } from '../actions'
 import OrderList from '../components/OrderList'
 import { 
-    makeGetVisibleOrderList, 
-    makeGetTotalSum, 
+    makeGetVisibleOrderList,
+    makeGetTotalSum,
     makeGetTotalSumWithDiscount
 } from '../selectors/orderListSelectors'
 
@@ -109,6 +111,7 @@ In above example `makeGetVisibleOrderList` is use 3 time. For: display order lis
 `reselect-scope` example
 
 #### `selectors/orderListSelectors.js`
+
 ```diff
 - import { createSelector } from 'reselect'
 + import { createSelector } from 'reselect-scope'
@@ -151,7 +154,8 @@ const makeMapStateToProps = () => {
 Now we use only 1 makeGetVisibleOrderList in the scope.
 
 ## Reuse scope
-If you want reuse scope in childred of share component
+
+If you want reuse scope in children of shared component
 
 #### `containers/VisibleOrderList.js`
 
@@ -192,8 +196,8 @@ const makeMapStateToProps = () => {
 import { beginScope, endScope } from 'reselect-scope'
 import { connect } from 'react-redux'
 import OrderCard from '../components/OrderCard'
-import { 
-    makeGetTotalSum, 
+import {
+    makeGetTotalSum,
     makeGetTotalSumWithDiscount
 } from '../selectors/orderListSelectors'
 
