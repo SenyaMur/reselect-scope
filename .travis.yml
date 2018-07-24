@@ -4,6 +4,7 @@ node_js:
       - "5"
       - "6"
       - "7"
+      - "8"
 script:
       - npm run lint
       - npm test
@@ -11,5 +12,4 @@ script:
       - npm run compile
 
 after_success:
-  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
