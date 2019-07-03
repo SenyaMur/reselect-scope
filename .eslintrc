@@ -16,7 +16,7 @@
     }
   },
 
-  "parser": "babel-eslint",
+  "parser": "@babel/parser",
 
   "rules": {
     "react/display-name": 2,
